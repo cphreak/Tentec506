@@ -63,7 +63,7 @@ int A7_adjust = 1;                 // Set this to 1 if you want to adjust the CW
 //-------------------------------  SET OPTONAL FEATURES HERE  -------------------------------------------------------------
 
 //-------------------------------  CHANGE CALLSIGN HERE  -------------------------------------------------------------
-#define     CQ              ("CQCQCQ DE PA3ANG PA3ANG PA3ANG K")     // CQ text 
+#define     CQ              ("CQCQCQ DE KY7K KY7K KY7K K")     // CQ text 
 //-------------------------------  CHANGE CALLSIGN HERE  -------------------------------------------------------------
 
 // included in this sketch is a   
