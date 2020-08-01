@@ -470,7 +470,6 @@ void loop()
     for (int t=0; t < ((bsm-1)+2);) {
       Step_Flash(); 
       delay(200);
-      //for (int i=0; i <= 200e3; i++); 
       t++;
     }
   }
@@ -1246,8 +1245,7 @@ void Terminal_Refresh(int z)
 void Step_Flash()
 {
     stop_led_on();
-    delay(100);
-    //for (int i=0; i <= 25e3; i++); // short delay 
+    delay(100); 
     stop_led_off();   
 }
 
