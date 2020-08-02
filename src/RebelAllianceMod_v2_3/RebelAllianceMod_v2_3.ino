@@ -325,7 +325,7 @@ void setup()
 
   AD9834_init();
   AD9834_reset();
-  encoder0PinALast = digitalRead(encoder0PinA);  
+  encoder0PinALast = digitalRead(encoder0PinA);
   attachCoreTimerService(TimerOverFlow);        //See function at the bottom of the file.
 
   myGLCD.InitLCD();
@@ -472,10 +472,18 @@ void loop()
     }
     Default_frequency();
     // flash Ten-Tec led
-    for (int t=0; t < ((bsm-1)+2);) {
+    if ( bsm ) {
+      //Flash 4 times for 40m
+      for ( int i = 0; i <= 4; i++ ) {
+        Step_Flash();
+        delay(200);
+      }
+    } else {
+      // Flash 2 times for 20m
+      for ( int i = 0; i <= 2; i++ ) {
       Step_Flash(); 
       delay(200);
-      t++;
+      }
     }
   }
 #endif  //FEATURE_BANDSWITCH
