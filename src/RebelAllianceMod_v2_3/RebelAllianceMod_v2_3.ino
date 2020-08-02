@@ -392,6 +392,12 @@ void loop()
     S_G();
     if ( !A7_adjust) Step_Multi_Function_Button1 = 0;    // if U1 meaningfull avoid this state
   }
+  if ( tune && ((digitalRead(TX_Dit) == LOW) || (digitalRead(TX_Dah) == LOW))) {
+    // stop tune if key/paddle pressed
+    Step_Multi_Function_Button1 = 2;
+    S_G();
+    if ( !A7_adjust) Step_Multi_Function_Button1 = 0;    // if U1 meaningfull avoid this state
+  }
   Tune();
   
   if ( Selected_Other == 1 ) 
@@ -474,13 +480,11 @@ void loop()
     // flash Ten-Tec led
     if ( bsm ) {
       //Flash 4 times for 40m
-      for ( int i = 0; i <= 4; i++ ) {
         Step_Flash();
         delay(200);
       }
     } else {
       // Flash 2 times for 20m
-      for ( int i = 0; i <= 2; i++ ) {
       Step_Flash(); 
       delay(200);
       }
