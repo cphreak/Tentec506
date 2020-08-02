@@ -480,11 +480,13 @@ void loop()
     // flash Ten-Tec led
     if ( bsm ) {
       //Flash 4 times for 40m
+      for ( int i = 0; i < 4; i++ ) {
         Step_Flash();
         delay(200);
       }
     } else {
       // Flash 2 times for 20m
+      for ( int i = 0; i < 2; i++ ) {
       Step_Flash(); 
       delay(200);
       }
