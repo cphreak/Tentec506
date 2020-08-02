@@ -56,8 +56,8 @@ int CWSpeedReadValue        = 0;
 
 //-------------------------------  SET OPTONAL FEATURES HERE  -------------------------------------------------------------
 int ST_key = 0;                    // Set this to 1 is you want to disable the keyer completely
-int A7_adjust = 1;                 // Set this to 1 if you want to adjust the CW speed with pot A7, else the speed is 
-                                   // controlled with function U1  DIT increase and DAH decrease speed.
+int A7_adjust = 0;                 // Set this to 1 if you want to adjust the CW speed with pot A7, else the speed is 
+//#define DEBUG                                   // controlled with function U1  DIT increase and DAH decrease speed.
 #define FEATURE_BANDSWITCH         // Software based Band Switching.  Press FUNCTION > 0.5 seconds  NEEDS ADDITIONAL HARDWARE
                                    // Comment the line is you have no additional hardware added.
 //-------------------------------  SET OPTONAL FEATURES HERE  -------------------------------------------------------------
@@ -129,7 +129,12 @@ extern uint8_t bit_map_dot[];		// W2ROW bitmap addon
 int rx_display;
 
 // define terminal / cat active at start
-int terminal = 1;                              // terminal active at start
+#ifdef DEBUG
+  int terminal = 0;
+#else
+  int terminal = 1;                              // terminal active at start
+#endif
+
 String CatStatus = "T";
 unsigned long  catStartTime    = 0;
 unsigned long  catElapsedTime  = 0;
@@ -1305,12 +1310,16 @@ void Multi_Function() // The right most pushbutton for BW, Step, Other
            time = millis();
          }
        } // Debounce end
-
-        Step_Multi_Function_Button1 = Step_Multi_Function_Button1++;
+        Step_Multi_Function_Button1++;
         if (Step_Multi_Function_Button1 > 2 ) 
         { 
             Step_Multi_Function_Button1 = 0; 
         }
+        #ifdef DEBUG
+        Serial.print("Multi_Function PUSHED. Step_Multi_Function_Button1= ");
+        Serial.print( Step_Multi_Function_Button1 );
+        Serial.print( "\n" );
+        #endif
     }
     Step_Function();
 }
@@ -1373,11 +1382,16 @@ void  Selection()
            time = millis();
          }
        } // Debounce end
-        Step_Select_Button1 = Step_Select_Button1++;
+        Step_Select_Button1++;
         if (Step_Select_Button1 > 2 ) 
         { 
             Step_Select_Button1 = 0; 
         }
+        #ifdef DEBUG
+        Serial.print("Select_Function PUSHED. Step_Multi_Function_Button1= ");
+        Serial.print( Step_Multi_Function_Button1 );
+        Serial.print( "\n" );
+        #endif
     }
     Step_Select(); 
 }
