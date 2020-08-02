@@ -98,7 +98,7 @@ unsigned char       keyerControl;
 unsigned char       keyerState;
 unsigned long       ditTime;    // No. milliseconds per dit
 enum KSTYPE {IDLE, CHK_DIT, CHK_DAH, KEYED_PREP, KEYED, INTER_ELEMENT };
-int CWSpeed = 22;
+int CWSpeed = 20;
 
 // some text variables for the display and terminal functions
 #define bw 3
@@ -175,8 +175,8 @@ int m                           = LOW;
 int step_counter                = 0;          // Flash LED every 4 steps
 
 // frequency vaiables and memory
-const long meter_40             = 16.03e6;      // IF + Band frequency, 
-long meter_40_memory            = 16.03e6;      // HI side injection 40 meter 
+const long meter_40             = 16.06e6;      // IF + Band frequency, 
+long meter_40_memory            = 16.06e6;      // HI side injection 40 meter 
                                                 // range 16 > 16.3 mhz                                              
 const long meter_20             = 5.06e6;       // Band frequency - IF, LOW 
 long meter_20_memory            = 5.06e6;       // side injection 20 meter 
