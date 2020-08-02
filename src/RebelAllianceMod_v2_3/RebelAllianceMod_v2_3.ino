@@ -70,7 +70,7 @@ int A7_adjust = 0;                 // Set this to 1 if you want to adjust the CW
 // Simple Arduino CW text Keyer for sending CQ by selecting U2
 // which is also used for frequency announce by pressing the SELECT > 0.5 seconds
 // Written by Mark VandeWettering K6HX
-#define     CQ_DELAY        10                                 // in seconds
+#define     CQ_DELAY        6                                 // in seconds
 #define     N_MORSE  (sizeof(morsetab)/sizeof(morsetab[0]))    // Morse Table
 // CQ function variables
 unsigned long  cqStartTime    = 0;
