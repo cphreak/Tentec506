@@ -2,7 +2,7 @@ Hello Ten-Tec Rebel model 506 users.
 
 UPDATED to use ArduinoIDE from Arduino.cc
 
-You need to add the Chipkit-core board kit to the IDE. See /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
+You need to add the Chipkit-core board kit to the IDE. See https://chipkit.net/wiki/index.php?title=ChipKIT_core
 for instructions.
 
 KY7K 1aug20
